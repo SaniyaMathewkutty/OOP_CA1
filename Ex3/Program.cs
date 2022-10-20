@@ -25,14 +25,12 @@ namespace Ex3
                 {
                     ibans[i, j] = File.ReadAllText(fileContents[i]);
                     Console.Write("bank code = {0}", ExtractBankCode(fileContents));
-                    Console.Write("Sort code = {0}", ExtractSortCode(fileContents)); ;
+                    Console.Write("Sort code = {0}", ExtractSortCode(fileContents));
                     Console.Write("Account number = {0}", ExtractAcNo(fileContents));
                 }
             }
 
-            
             Console.ReadLine();
-
 
         }
         private static string ExtractBankCode(string[] ibans)

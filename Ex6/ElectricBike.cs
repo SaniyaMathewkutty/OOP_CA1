@@ -36,8 +36,8 @@ namespace Ex6
 
         public decimal BatteryPercentage
         {
-            get { return _batterypercentage; }
-            set { _batterypercentage = value; }
+            get { return _battery; }
+            set { _battery = value; }
         }
     }
 }

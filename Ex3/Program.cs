@@ -14,40 +14,67 @@ namespace Ex3
             string filePath = "file.txt";
             string[] fileContents = File.ReadAllLines(filePath);
 
-            ExtractBankDetails(fileContents);
-
-        }
-        private static string ExtractBankDetails(string[] ibans)
-        {
-            // Variables to store details for each line
-            string bankCode = "", sortCode = "", acNo = "", iban = "";
-
-            // Arrays to store the bank details 
-            string[] bankCodes = new string[ibans.Length];
-            string[] sortCodes = new string[ibans.Length];
-            string[] acNos = new string[ibans.Length];
-
-            for (int i = 0; i < ibans.Length; i++)
+            string[,] ibans = new string[,]
             {
-                iban = ibans[i];
+                {""}
+            };
 
-                for (int j = 0; j < 8; j++)
+            for (int i = 0; i < fileContents.Length; i++)
+            {
+                for (int j = 0; j < fileContents[i].Length; j++)
                 {
-                    bankCode += bankCodes[j];
-                }
-
-                for (int k = 8; k < 14; k++)
-                {
-                    sortCode += sortCodes[i];
-                }
-
-                for (int l = 14; l < 22; l++)
-                {
-                    acNo += acNos[i];
+                    ibans[i, j] = File.ReadAllText(fileContents[i]);
+                    Console.Write("bank code = {0}", ExtractBankCode(fileContents));
+                    Console.Write("Sort code = {0}", ExtractSortCode(fileContents)); ;
+                    Console.Write("Account number = {0}", ExtractAcNo(fileContents));
                 }
             }
 
+            
+            Console.ReadLine();
+
+
+        }
+        private static string ExtractBankCode(string[] ibans)
+        {
+            // Variable to return with bank code
+            string bankCode = ""; 
+
+            // Arrays to store the bank details 
+            string[] bankCodes = new string[ibans.Length];
+
+            for (int i = 0; i < 8; i++)
+            {
+                bankCode += bankCodes[i];
+            }
+            return bankCode;
+
           
+        }
+        private static string ExtractSortCode(string[] ibans)
+        {
+            string sortCode = "";
+            string[] sortCodes = new string[ibans.Length];
+
+            for (int i = 8; i < 14; i++)
+            {
+                sortCode += sortCodes[i];
+            }
+
+            return sortCode;
+        }
+
+        private static string ExtractAcNo(string[] ibans)
+        {
+            string acNo = "";
+            string[] acNos = new string[ibans.Length];
+
+            for (int i = 14; i < 22; i++)
+            {
+                acNo += acNos[i];
+            }
+
+            return acNo;
         }
     }
 }

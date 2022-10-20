@@ -25,10 +25,10 @@ namespace Ex2
                     discount = 0.5;
                     break;
                 case "students":
-                    discount = 0.5;
+                    discount = 0.2;
                     break;
                 case "oap":
-                    discount = 0.5;
+                    discount = 0.1;
                     break;
                 default:
                     discount = 0;
@@ -39,7 +39,7 @@ namespace Ex2
             price = charge - (charge * discount);
 
             // Display discounted price
-            Console.Write($"Your price = € {price}");
+            Console.Write($"Your price = EUR {price}");
             Console.ReadLine();
 
             Console.ReadLine();

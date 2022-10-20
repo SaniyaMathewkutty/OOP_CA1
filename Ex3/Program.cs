@@ -19,7 +19,31 @@ namespace Ex3
         }
         private static string ExtractBankDetails(string[] ibans)
         {
+            string bankCode = "", sortCode = "", acNo = "", iban = "";
 
+            string[] bankCodes = new string[ibans.Length];
+            string[] sortCodes = new string[ibans.Length];
+            string[] acNos = new string[ibans.Length];
+
+            for (int i = 0; i < ibans.Length; i++)
+            {
+                iban = ibans[i];
+
+                for (int j = 0; j < 8; j++)
+                {
+                    bankCode += bankCodes[j];
+                }
+
+                for (int k = 8; k < 14; k++)
+                {
+                    sortCode += sortCodes[i];
+                }
+
+                for (int l = 14; l < 22; l++)
+                {
+                    
+                }
+            }
         }
     }
 }

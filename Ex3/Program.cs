@@ -41,9 +41,13 @@ namespace Ex3
 
                 for (int l = 14; l < 22; l++)
                 {
-                    
+                    acNo += acNos[i];
                 }
             }
+
+
+
+          
         }
     }
 }

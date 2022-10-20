@@ -19,8 +19,10 @@ namespace Ex3
         }
         private static string ExtractBankDetails(string[] ibans)
         {
+            // Variables to store details for each line
             string bankCode = "", sortCode = "", acNo = "", iban = "";
 
+            // Arrays to store the bank details 
             string[] bankCodes = new string[ibans.Length];
             string[] sortCodes = new string[ibans.Length];
             string[] acNos = new string[ibans.Length];
@@ -44,8 +46,6 @@ namespace Ex3
                     acNo += acNos[i];
                 }
             }
-
-
 
           
         }
